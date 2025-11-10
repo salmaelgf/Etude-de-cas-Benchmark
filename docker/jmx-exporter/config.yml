@@ -1,0 +1,17 @@
+lowercaseOutputName: true
+rules:
+  - pattern: 'java.lang<type=Memory><>(.+):'
+    name: jvm_memory_$1
+    type: GAUGE
+  - pattern: 'java.lang<type=GarbageCollector,name=(.+)><>CollectionTime'
+    name: jvm_gc_collection_time_ms
+    type: COUNTER
+  - pattern: 'java.lang<type=GarbageCollector,name=(.+)><>CollectionCount'
+    name: jvm_gc_collection_count
+    type: COUNTER
+  - pattern: 'java.lang<type=Threading><>ThreadCount'
+    name: jvm_threads_count
+    type: GAUGE
+  - pattern: 'java.lang<type=OperatingSystem><>ProcessCpuLoad'
+    name: process_cpu_load
+    type: GAUGE
